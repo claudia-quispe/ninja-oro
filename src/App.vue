@@ -1,17 +1,18 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+    <img class="gold" alt="Vue logo" src="./assets/gold.png">
+    <FindGold msg="Ninja Gold"/>   
+  </div>  
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FindGold from './components/FindGold.vue'
+
 
 export default {
-  name: 'App',
+  
   components: {
-    HelloWorld
+    FindGold
   }
 }
 </script>
@@ -22,7 +23,8 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  color: green;
+  
+
 }
 </style>
