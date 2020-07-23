@@ -5,7 +5,7 @@
             <p class="card-text">Earns {{ minGold }} - {{ maxGold }} golds</p>
             <a href="#" class="btn btn-success" @click="generateGold" >Find Gold!</a>
         </div>
-    </div>   
+    </div>    
 </template>
 
 <script>
@@ -34,8 +34,8 @@ export default {
             const instante = hour + ":" + minutes + "hrs." + day + "/" + month + "/" + year;
             // agregar nueva actividad
             store.addActivity(`${newGold < 0 ? "Lost :(" : "Earned"} ${newGold} golds from the ${this.name} (${instante})`
-            );    
-        }
+            );
+        },
     }
 };
 </script> 

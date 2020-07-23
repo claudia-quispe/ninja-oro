@@ -23,6 +23,7 @@
           </ul>            
         </div>
       </div>
+        <a href="#" class="btn btn-success" @click="reset" >Reset</a> 
   </div>
 </template>
 
@@ -38,8 +39,17 @@ export default {
   components: {
     Gold
   },
+  methods: {
+    reset: function (event) { // truco event, preventDefault evitamos que la pagina se recargue (href #)
+      event.preventDefault() 
+      const respuesta = confirm("¿Deseas restaurar la página?") // acá añadimos el mensaje dentro de Confirm
+      if (respuesta == true) { //acá damos la opción de resetear oro y actividades con un if
+        store.resetGold() // 
+        store.resetActivities()
+      }
+    }
+  }
 }
-
 
 </script>
 
@@ -68,5 +78,7 @@ li {
   margin: auto;
   margin-top: 20px;
 }
-
+.btn {
+  margin-top: 15px;
+}
 </style>
