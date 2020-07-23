@@ -35,6 +35,8 @@ export default {
             // agregar nueva actividad
             store.addActivity(`${newGold < 0 ? "Lost :(" : "Earned"} ${newGold} golds from the ${this.name} (${instante})`
             );
+            //.addActivity()
+            //
         },
     }
 };
