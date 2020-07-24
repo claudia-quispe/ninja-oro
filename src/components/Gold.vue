@@ -33,8 +33,11 @@ export default {
             let year = date.getFullYear();
             const instante = hour + ":" + minutes + "hrs." + day + "/" + month + "/" + year;
             // agregar nueva actividad
-            store.addActivity(`${newGold < 0 ? "Lost :(" : "Earned"} ${newGold} golds from the ${this.name} (${instante})`
-            );
+            const activity = { //agregamos objetos
+                text:`${newGold < 0 ? "Lost" : "Earned"} ${newGold} golds from the ${this.name} (${instante})`,
+                number: newGold
+            }
+            store.addActivity(activity);
             //.addActivity()
             //
         },

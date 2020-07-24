@@ -1,6 +1,6 @@
 <template> 
   <div class="componente">
-    <h3>Your Gold: {{ NumGold }}</h3>
+    <h3 :class="{Earned: NumGold > 0, Lost: NumGold < 0}">Your Gold: {{ NumGold }}</h3>
       <div class="row">
         <div class="col-sm-3">
           <Gold name="Farm" :minGold="10" :maxGold="20"/>
@@ -19,7 +19,7 @@
         <div class="card-body">
           <h6> Activity: </h6>
           <ul class="list-group">
-            <li class="list-group-item" v-for="(Actividad, i) in Activity" v-bind:key="i">{{ Actividad }}</li>
+            <li v-for="(actividad, i) in Activity" v-bind:key="i" :class="{Earned: actividad.number > 0, Lost: actividad.number < 0, 'list-group-item':true}">{{ actividad.text }}</li>
           </ul>            
         </div>
       </div>
@@ -37,7 +37,7 @@ export default {
       return store.state
     },
   components: {
-    Gold
+    Gold 
   },
   methods: {
     reset: function (event) { // truco event, preventDefault evitamos que la pagina se recargue (href #)
@@ -80,5 +80,11 @@ li {
 }
 .btn {
   margin-top: 15px;
+}
+.Earned {
+  color:green;
+}
+.Lost {
+  color:red;
 }
 </style>
